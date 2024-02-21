@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+
+#save in given files
 file_path='Students-list_1023.txt'
 file_save='student-emails.txt'
 
