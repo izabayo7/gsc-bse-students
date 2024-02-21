@@ -10,7 +10,7 @@ if [ -f "$file_path" ]; then
     new_email=$(awk -F '|' 'NR > 3 { gsub(/^[ \t]+|[ \t]+$/, "", $4); print $4 }' "$file_path")
     echo "$new_email" > "$file_save"
 
-    # Display loading message
+    # Display loading message----------------------
     echo -n "Opening Emails preview in ascending order"
     for i in {1..10}; do
         echo -n "."
@@ -19,7 +19,7 @@ if [ -f "$file_path" ]; then
     echo -e "100%\n"
     # End of loading
 
-    # Sort the email list
+    # Sort the email list-----------------------------
     cat "$file_save" | sort > "$file_save.temp"
     mv "$file_save.temp" "$file_save"
 
