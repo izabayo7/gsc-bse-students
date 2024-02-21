@@ -25,6 +25,8 @@ if [ -f "$file_path" ]; then
 
     echo -e "\n\n\n"
     ./main.sh
+
+    #file doesn't exit error message
 else
     echo "Error: File doesn't exist"
 fi
