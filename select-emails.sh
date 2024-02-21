@@ -6,7 +6,7 @@ file_path='Students-list_1023.txt'
 file_save='student-emails.txt'
 
 if [ -f "$file_path" ]; then
-    # Extract email addresses from the file
+    # Extract email addresses from the file------------------
     new_email=$(awk -F '|' 'NR > 3 { gsub(/^[ \t]+|[ \t]+$/, "", $4); print $4 }' "$file_path")
     echo "$new_email" > "$file_save"
 
