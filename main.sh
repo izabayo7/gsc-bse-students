@@ -16,6 +16,53 @@ load
 
 export file_path="Students-list_1023.txt"
 
+#----------------------------------------function To Register student
+function register {
+  # get inputs with function
+  read -p "Enter Student Email: " email
+  read -p "Enter Student Age: " age
+  #must be in formmat like this [ALU2023001]
+  read -p "Enter Student Id: " id
+
+  if [[ $email == *"@alustudent.com" ]]; then
+    if [ -e "$file_path" ]; then
+      echo "adding student"
+    else
+      printf "+----------------------------+----------------------------+-------------------------------------\n" > $file_path
+      printf "| %-26s | %-26s | %-36s |\n" "student Id" "Age" "Email" >> $file_path
+      printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
+      echo "Creating Table and Adding Data"
+    fi
+    sleep 1
+    # use grep to search if student id column exists
+    if grep -E "^\|[[:space:]]*$id[[:space:]]*\|" $file_path; then
+      # message notification
+      echo -e "\n\n****The student Id Already Exists***\n"
+      # restart app for the user to enter new data
+      sleep 2
+      clear
+      ./main.sh
+    else
+      # Print table rows
+      printf "| %-25s | %-26s | %-36s |\n" "$id" "$age" "$email" >> $file_path
+      printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
+      # loading message
+      echo -n "opening preview loading ";
+      load
+      # end of loading
+      cat $file_path
+      echo -e "\n\n returning to Home\n\n"
+      load
+      # end of loading
+      clear
+      ./main.sh
+    fi
+  else
+    echo -e "\n\n**************** This is Not A valid ALU Student Email ****************\n\n"
+    # call the register function if invalid email to allow the user to input again
+    register
+  fi
+}
 
 #------------------------function to exit program 
 function exit_main {
@@ -57,7 +104,7 @@ echo -e "\n"
 # Switch case to call functions according to user need
 case $choice in
     1)
-        # register
+        register
         ;;
     2)
         # view_student
