@@ -9,7 +9,7 @@ function load {
     echo -e "100%\n"
 }
 
-# Check if the directory exists
+# Check if the directory exists---------------------
 folder="negpod_0-q1"
 
 # File initialization
