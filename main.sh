@@ -210,6 +210,22 @@ function view_email {
     ./main.sh
 }
 
+#------------------------function to backup data
+function back_up {
+    read -p "Are you sure you want to backup your data? (Y or N) If you backup this data, everything will be backed up and you won't be able to run this program unless you go to the online server or backup directory: " opt
+
+    if [ "$opt" == 'Y' ] || [ "$opt" == 'y' ]; then
+        echo -n "Opening Backup"
+        load
+        ./move-to-directory.sh
+    else
+        echo "$opt"
+        echo -n "Returning to home"
+        load
+        ./main.sh
+    fi
+}
+
 #------------------------function to exit program 
 function exit_main {
     # Send message for closing app
@@ -268,10 +284,10 @@ case $choice in
         view_email
         ;;
     7)
-        # back_up
+        back_up
         ;;
     8)
-        # exit_main
+        exit_main
         ;;
     *)
         echo "Invalid choice. Please try again."
