@@ -12,7 +12,7 @@ function load {
 # Check if the directory exists---------------------
 folder="negpod_0-q1"
 
-# File initialization
+# File initialization---------------
 s_email='select-emails.sh'
 main='main.sh'
 file_path='Students-list_1023.txt'
