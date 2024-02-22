@@ -159,6 +159,37 @@ function update_student {
   fi
 }
 
+#---------------------------------------function to Delete student
+function delete_student {
+    # Get student Id
+    read -p "Enter The Student Id To Delete: " id
+
+    # Check if file Exists To Avoid Errors
+    if [ -f "$file_path" ]; then
+        # Use Grep To Search Student Id that matches the pattern
+        grep -E -n "^\|[[:space:]]*$id[[:space:]]*\|" "$file_path" | while read -r line; do
+            # Lines matches including numbers and split them (with line numbers)
+            line_num=$(echo "$line" | cut -d ':' -f 1)
+            # Delete the line that matched the search and the next line
+            sed -i "${line_num}d;$(($line_num+1))d" "$file_path"
+        done
+        echo "Deleted row with Student ID: $id"
+
+        echo -e "\n\n **** Preparing Your Preview **** \n\n"
+        load
+        # End of loading 
+        clear
+        view_student
+    else
+        echo "Error: File not found at path: $file_path"
+        echo -e "\n\n **** returning to Home ****\n\n"
+        load
+        # End of loading 
+        clear
+        ./main.sh
+    fi
+}
+
 #------------------------function to exit program 
 function exit_main {
     # Send message for closing app
@@ -208,7 +239,7 @@ case $choice in
         update_student
         ;;
     4)
-        # delete_student
+        delete_student
         ;;
     5)
         # email_save
