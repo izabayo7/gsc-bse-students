@@ -18,6 +18,8 @@ main='main.sh'
 file_path='Students-list_1023.txt'
 file_save='student-emails.txt'
 
+# file exit
+
 if [ -f "$s_email" ] && [ -f "$main" ] && [ -f "$file_path" ] && [ -f "$file_save" ]; then
     if [ -d "$folder" ]; then
         echo -n "Moving Files "
