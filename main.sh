@@ -94,6 +94,71 @@ function view_student {
   fi
 }
 
+#----------------------------function To Update Student
+function update_student {
+  # check if file exists
+  if [ -f "$file_path" ]; then
+    # get email
+    read -p "Enter The Student Id To Edit: " id
+
+    # check existence of the student id
+    if grep -E "^\|[[:space:]]*$id[[:space:]]*\|" "$file_path"; then
+      # message to the being edited
+      echo -e "\nYou Are Editing this User\n"
+      # get data from user: age and email
+      read -p "Enter New Age: " age
+      read -p "Enter New Email: " email
+
+      if [[ $email == *"@alustudent.com" ]]; then
+        temp_file="temp_file"
+        found=false
+        while IFS= read -r line; do
+          if echo "$line" | grep -q -E "^\|[[:space:]]*$id[[:space:]]*\|"; then
+            printf "| %-26s | %-26s | %-36s |\n" "$id" "$age" "$email" >> "$temp_file"
+            found=true
+          else
+            echo "$line" >> "$temp_file"
+          fi
+        done < "$file_path"
+        
+        if [ "$found" = false ]; then
+          echo "Student ID: $id not found in the file."
+          echo -e "\n\n **** returning to Home **** \n\n"
+          load
+          # end of loading
+          clear
+          ./main.sh
+        else
+          mv "$temp_file" "$file_path"
+          echo "Successfully Edited Student with ID: $id"
+          echo -e "\n\n **** Preparing Your Preview **** \n\n"
+          load
+          # end of loading
+          clear
+          view_student
+        fi
+      else
+        echo -e "\n\n**************** This is Not A valid ALU Student Email ****************\n\n"
+        update_student
+      fi
+    else
+      echo "Error: Student Id Doesn't exist: $id"
+      echo -e "\n\n **** returning to Home **** \n\n"
+      load
+      # end of loading
+      clear
+      ./main.sh
+    fi
+  else
+    echo "Error: File not found : $file_path"
+    echo -e "\n\n **** returning to Home **** \n\n"
+    load
+    # end of loading
+    clear
+    ./main.sh
+  fi
+}
+
 #------------------------function to exit program 
 function exit_main {
     # Send message for closing app
@@ -140,7 +205,7 @@ case $choice in
         view_student
         ;;
     3)
-        # update_student
+        update_student
         ;;
     4)
         # delete_student
