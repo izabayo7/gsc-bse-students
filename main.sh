@@ -190,6 +190,14 @@ function delete_student {
     fi
 }
 
+#------------------------function to save in new file 
+function email_save {
+    echo -n "Saving Emails in ASC"
+    sleep 0.6
+    clear
+    ./select-emails.sh
+}
+
 #------------------------function to exit program 
 function exit_main {
     # Send message for closing app
@@ -242,7 +250,7 @@ case $choice in
         delete_student
         ;;
     5)
-        # email_save
+        email_save
         ;;
     6)
         # view_email
