@@ -198,6 +198,18 @@ function email_save {
     ./select-emails.sh
 }
 
+emails='student-emails.txt'
+
+#------------------------function to view emails in ASC order
+function view_email {
+    # Loading message
+    echo -n "Opening Emails preview in ASC Order"
+    load
+    # End of loading
+    cat "$emails"
+    ./main.sh
+}
+
 #------------------------function to exit program 
 function exit_main {
     # Send message for closing app
@@ -253,7 +265,7 @@ case $choice in
         email_save
         ;;
     6)
-        # view_email
+        view_email
         ;;
     7)
         # back_up
