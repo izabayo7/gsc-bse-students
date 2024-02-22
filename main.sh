@@ -64,6 +64,36 @@ function register {
   fi
 }
 
+# function to view all students
+function view_student {
+  # Check if the file exists
+  if [ -f "$file_path" ]; then
+    # check if file is empty
+    if [ -s "$file_path" ]; then
+      # message
+      echo -e "\n\n \t\t\t*** Viewing All Students ***\n\n\n"
+      # display students
+      cat "$file_path"
+      # and also call restart the app for user to choose other
+      ./main.sh
+    else
+      echo "No Student Found. Try Adding New Students."
+      echo -e "\n\n **** returning to Home **** \n\n"
+      # call the load function
+      load
+      # clear everything and restart the app for user
+      clear
+      ./main.sh
+    fi
+  else
+    echo "File Not Found."
+    echo -e "\n\n **** returning to Home **** \n\n"
+    load
+    clear
+    ./main.sh
+  fi
+}
+
 #------------------------function to exit program 
 function exit_main {
     # Send message for closing app
@@ -107,7 +137,7 @@ case $choice in
         register
         ;;
     2)
-        # view_student
+        view_student
         ;;
     3)
         # update_student
