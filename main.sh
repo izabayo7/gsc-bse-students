@@ -226,7 +226,7 @@ function back_up {
     fi
 }
 
-#------------------------function to exit program 
+#------------------------function to exit program---------------
 function exit_main {
     # Send message for closing app
     echo -n "Closing App. Please wait for a few seconds to finish..."
