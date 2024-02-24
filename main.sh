@@ -190,7 +190,7 @@ function delete_student {
     fi
 }
 
-#------------------------function to save in new file 
+#------------------------function to save in new file ------------------------------
 function email_save {
     echo -n "Saving Emails in ASC"
     sleep 0.6
