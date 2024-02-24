@@ -200,7 +200,7 @@ function email_save {
 
 emails='student-emails.txt'
 
-#------------------------function to view emails in ASC order
+#------------------------function to view emails in ASC order-----------------------
 function view_email {
     # Loading message
     echo -n "Opening Emails preview in ASC Order"
