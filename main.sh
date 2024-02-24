@@ -159,7 +159,7 @@ function update_student {
   fi
 }
 
-#---------------------------------------function to Delete student
+#---------------------------------------function to Delete student------------------
 function delete_student {
     # Get student Id
     read -p "Enter The Student Id To Delete: " id
