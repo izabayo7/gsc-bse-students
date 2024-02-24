@@ -94,7 +94,7 @@ function view_student {
   fi
 }
 
-#----------------------------function To Update Student
+#----------------------------function To Update Student----------------------
 function update_student {
   # check if file exists
   if [ -f "$file_path" ]; then
