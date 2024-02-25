@@ -29,3 +29,15 @@ The development of this application was a group effort, with each member contrib
 6. **View Student Emails Sorted in ASC**: Cedric (7+ commits)
 7. **Backup Your Data**: Cedric (7+ commits)
 8. **Exit The Program**: Liliane (7+ commits)
+
+## Contributors
+
+- Raissa (7+ commits)
+- Elissa (7+ commits)
+- Denis (7+ commits)
+- Liliane (7+ commits)
+- Cedric (7+ commits)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
