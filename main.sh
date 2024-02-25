@@ -9,7 +9,7 @@ function load {
   echo -e "100%\n"
 } 
 
-echo -e "\n\n***************** Welcome To Bachlor of Software   Engineering cohort list of  Students ***************\n"
+echo -e "\n\n***************** Welcome To Our Student Management App ***************\n"
 
 echo -n "starting App"
 load
