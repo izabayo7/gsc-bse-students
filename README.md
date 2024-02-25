@@ -13,3 +13,7 @@ This is a Bash script application designed to manage a list of students. It allo
 3. **Run the Application**: Execute the main script (`main.sh`) to start the application. You can do this by running `./main.sh` in your terminal.
 
 4. **Choose Operation**: Once the application is running, you'll be presented with a menu of operations to choose from. Enter the corresponding number for the operation you want to perform.
+
+5. **Exit the Program**: To exit the program, select option 8 from the menu.
+
+## Group Contribution
