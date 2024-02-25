@@ -25,3 +25,7 @@ The development of this application was a group effort, with each member contrib
 2. **View All Students**: Elissa (7+ commits)
 3. **Edit Existing Student**: Denis (7+ commits)
 4. **Delete Student**: Liliane (7+ commits)
+5. **Save Student Emails Sorted in ASC**: Elissa (7+ commits)
+6. **View Student Emails Sorted in ASC**: Cedric (7+ commits)
+7. **Backup Your Data**: Cedric (7+ commits)
+8. **Exit The Program**: Liliane (7+ commits)
