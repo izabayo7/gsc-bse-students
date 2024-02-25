@@ -275,6 +275,7 @@ case $choice in
         update_student
         ;;
     4)
+    
         delete_student
         ;;
     5)
