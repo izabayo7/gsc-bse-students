@@ -17,3 +17,11 @@ This is a Bash script application designed to manage a list of students. It allo
 5. **Exit the Program**: To exit the program, select option 8 from the menu.
 
 ## Group Contribution
+
+The development of this application was a group effort, with each member contributing to different aspects of the project:
+
+0. **Setup**: All team members participated in the initial setup of the project.
+1. **Add New Student & Load Function**: Raissa (7+ commits)
+2. **View All Students**: Elissa (7+ commits)
+3. **Edit Existing Student**: Denis (7+ commits)
+4. **Delete Student**: Liliane (7+ commits)
